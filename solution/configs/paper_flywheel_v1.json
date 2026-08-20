@@ -1,0 +1,81 @@
+{
+  "experiment_id": "paper_flywheel_v1",
+  "research_only": true,
+  "competition_submission_eligible": false,
+  "paper_contract": {
+    "seed_queries": 10000,
+    "seed_query_source": "InfoSeekQA",
+    "query_sampling": "sample 10000 queries independently at every loop; exact paper RNG and overlap policy are not disclosed",
+    "agent": "Alibaba-NLP/Tongyi-DeepResearch-30B-A3B",
+    "judge": "Qwen/Qwen3-30B-A3B-Thinking-2507",
+    "max_agent_turns": 100,
+    "search_top_k": 10,
+    "snippet_max_tokens": 64,
+    "positive_signal": "document selected by a Browse/get_document action after Search",
+    "negative_signal": "retrieved documents not selected for Browse",
+    "false_positive_filter": "judge the post-browse reasoning and keep only RELEVANT",
+    "weight": "normalize 1-exp(-ln(2)*reasoning_len/global_median_reasoning_len) to mean 1",
+    "loss": "weighted InfoNCE",
+    "train_epochs_per_loop": 2,
+    "learning_rate": 1e-06,
+    "temperature": 0.02,
+    "weighted_loss_reduction": "mean_over_minibatch",
+    "reported_train_batch_size": 32,
+    "train_group_size": 10,
+    "query_max_tokens": 512,
+    "passage_max_tokens": 512,
+    "loop_update": "re-encode corpus, recollect trajectories, rebuild pairs, continue training the current retriever"
+  },
+  "paths": {
+    "research_root": "ccir/research/paper_flywheel_v1",
+    "seed_pool": "ccir/research/paper_flywheel_v1/inputs/InfoSeekQA.pool.tsv",
+    "seed_manifest": "ccir/research/paper_flywheel_v1/inputs/InfoSeekQA.pool.manifest.json",
+    "source_qa": "ccir/research/paper_flywheel_v1/inputs/InfoSeekQA.source.5b59bfd.jsonl",
+    "trajectory_archive": "ccir/data/raw/LRAT-trajectories.tar.gz",
+    "corpus": "ccir/data/raw/wiki-25-512/wiki-25-512.jsonl",
+    "initial_retriever": "ccir/models/Qwen3-Embedding-0.6B"
+  },
+  "runtime": {
+    "agent_model": "Alibaba-NLP/Tongyi-DeepResearch-30B-A3B",
+    "judge_model": "Qwen/Qwen3-30B-A3B-Thinking-2507",
+    "agent_port": 6008,
+    "judge_port": 6009,
+    "agent_tensor_parallel_size": 2,
+    "judge_tensor_parallel_size": 2,
+    "agent_threads": 8,
+    "judge_workers": 16,
+    "retrieval_device": "cpu",
+    "loops": 5,
+    "query_sampling_seed": 2025,
+    "training_profile": "paper_reported_batch32",
+    "training_profiles": {
+      "paper_reported_batch32": {
+        "world_size": 2,
+        "per_device_train_batch_size": 16,
+        "gradient_accumulation_steps": 1,
+        "global_microbatch_queries": 32,
+        "exact_in_batch_negative_pool": true
+      },
+      "two_a40_low_memory": {
+        "world_size": 2,
+        "per_device_train_batch_size": 1,
+        "gradient_accumulation_steps": 16,
+        "effective_optimizer_batch_queries": 32,
+        "global_microbatch_queries": 2,
+        "exact_in_batch_negative_pool": false
+      }
+    }
+  },
+  "disclosed_unknowns": [
+    "the paper does not disclose the random seed or overlap policy used when sampling 10K InfoSeekQA queries at each loop",
+    "the paper reports batch size 32 but does not state whether it is global or per-device; the default profile interprets it as a global simultaneous batch",
+    "the paper does not state whether optimizer state is continued or reset between flywheel iterations; this implementation updates from the current retriever but starts a fresh optimizer per loop"
+  ],
+  "hard_boundaries": [
+    "never read paper-flywheel outputs from competition preprocess/train/inference paths",
+    "never copy paper-flywheel checkpoints into ccir/models or ccir/submissions",
+    "never upload paper-flywheel checkpoints to Hugging Face or the competition platform",
+    "each loop must use a freshly encoded index and freshly collected trajectories from its current retriever",
+    "the low-memory profile is an engineering approximation and must never be reported as an exact paper hyperparameter reproduction"
+  ]
+}

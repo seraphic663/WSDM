@@ -1,0 +1,125 @@
+{
+  "created_at": "2026-08-20T03:11:16.440056+08:00",
+  "source": {
+    "path": "data/raw/LRAT-Train/LRAT-training-pairs.jsonl",
+    "rows": 96504,
+    "bytes": 3883089616,
+    "sha256": "dd75a3f1970438f0905a3e3e93e3d98dc1122cdb0e054ba87159a9368afbe1b9",
+    "normalized_query_groups_including_empty": 80890
+  },
+  "legacy_dev500": {
+    "path": "data/processed/dev.jsonl",
+    "rows": 500,
+    "bytes": 19672526,
+    "sha256": "cebcf7dca748d06fa66813d7e092b146328eaff648ad514f58d7fd994012a379",
+    "unique_normalized_queries": 500,
+    "exact_source_record_matches": 500,
+    "source_rows_sharing_these_queries": 605,
+    "query_groups_with_multiple_source_rows": 78,
+    "extra_source_rows_beyond_selected_records": 105,
+    "training_overlap_interpretation": "all legacy dev queries occur in the full training source",
+    "row_distributions": {
+      "reasoning_len": {
+        "count": 500,
+        "min": 4.0,
+        "median": 143.5,
+        "mean": 178.248,
+        "p95": 441.0,
+        "max": 1523.0
+      },
+      "reweight_rate": {
+        "count": 500,
+        "min": 0.040584541344753894,
+        "median": 1.0456330630953596,
+        "mean": 1.0130420179616542,
+        "p95": 1.8081789968182311,
+        "max": 2.0248242440370823
+      },
+      "negative_count": {
+        "count": 500,
+        "min": 5.0,
+        "median": 9.0,
+        "mean": 18.884,
+        "p95": 55.0,
+        "max": 229.0
+      },
+      "query_characters": {
+        "count": 500,
+        "min": 5.0,
+        "median": 40.0,
+        "mean": 45.46,
+        "p95": 88.0,
+        "max": 226.0
+      }
+    }
+  },
+  "literal_last_500_source_rows": {
+    "source_line_start": 96005,
+    "source_line_end": 96504,
+    "rows": 500,
+    "unique_normalized_queries": 449,
+    "within_tail_duplicate_rows_by_query": 51,
+    "query_groups_already_seen_before_tail": 38,
+    "tail_rows_whose_query_was_seen_before_tail": 41,
+    "valid_query_disjoint_holdout": false,
+    "row_distributions": {
+      "reasoning_len": {
+        "count": 500,
+        "min": 5.0,
+        "median": 133.0,
+        "mean": 170.708,
+        "p95": 427.0,
+        "max": 1535.0
+      },
+      "reweight_rate": {
+        "count": 500,
+        "min": 0.05060298948980181,
+        "median": 0.9921611016317097,
+        "mean": 0.9883811702548495,
+        "p95": 1.7922099574851786,
+        "max": 2.024877980026461
+      },
+      "negative_count": {
+        "count": 500,
+        "min": 6.0,
+        "median": 9.0,
+        "mean": 20.93,
+        "p95": 60.0,
+        "max": 168.0
+      },
+      "query_characters": {
+        "count": 500,
+        "min": 6.0,
+        "median": 39.0,
+        "mean": 43.17,
+        "p95": 76.0,
+        "max": 348.0
+      }
+    }
+  },
+  "proposed_early_stop_v1": {
+    "manifest_path": "data/processed/early_stop_v1/manifest.json",
+    "source_sha256_matches": true,
+    "train_rows": 94113,
+    "dev_query_groups": 1500,
+    "test_query_groups": 500,
+    "source_rows_excluded": 2391,
+    "normalized_query_overlap": 0,
+    "dev_candidates_per_query": {
+      "count": 1500,
+      "min": 9,
+      "median": 10.0,
+      "mean": 21.640666666666668,
+      "p95": 62,
+      "max": 313
+    },
+    "test_candidates_per_query": {
+      "count": 500,
+      "min": 9,
+      "median": 10.0,
+      "mean": 21.762,
+      "p95": 60,
+      "max": 195
+    }
+  }
+}

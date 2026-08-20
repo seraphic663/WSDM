@@ -1,0 +1,99 @@
+{
+  "input": "data/raw/LRAT-Train/LRAT-training-pairs.jsonl",
+  "records": 96504,
+  "invalid_json_lines": 0,
+  "fields": [
+    "neg",
+    "neg_id",
+    "pos",
+    "pos_id",
+    "query",
+    "reasoning_len",
+    "reweight_rate",
+    "satisfied"
+  ],
+  "empty": {
+    "query": 1,
+    "pos": 0,
+    "neg": 0
+  },
+  "duplicate_normalized_queries_after_first": 15614,
+  "unique_normalized_queries": 80890,
+  "pos_neg_id_overlap_records": 0,
+  "satisfied_counts": {
+    "true": 96504
+  },
+  "negative_count": {
+    "count": 96504,
+    "mean": 19.610700074608307,
+    "median": 9.0,
+    "p95": 58.0,
+    "min": 5.0,
+    "max": 407.0
+  },
+  "query_char_length": {
+    "count": 96504,
+    "mean": 44.52720094503855,
+    "median": 40.0,
+    "p95": 84.0,
+    "min": 0.0,
+    "max": 348.0
+  },
+  "positive_char_length_total": {
+    "count": 96504,
+    "mean": 1851.2501554339717,
+    "median": 2311.0,
+    "p95": 2846.0,
+    "min": 11.0,
+    "max": 3815.0
+  },
+  "negative_char_length_total": {
+    "count": 96504,
+    "mean": 37622.733824504685,
+    "median": 21984.5,
+    "p95": 113054.3499999999,
+    "min": 82.0,
+    "max": 1028372.0
+  },
+  "query_whitespace_token_approx": {
+    "count": 96504,
+    "mean": 5.990694686230623,
+    "median": 5.0,
+    "p95": 12.0,
+    "min": 0.0,
+    "max": 41.0
+  },
+  "positive_whitespace_token_approx_total": {
+    "count": 96504,
+    "mean": 299.47163848130646,
+    "median": 378.0,
+    "p95": 452.0,
+    "min": 1.0,
+    "max": 522.0
+  },
+  "negative_whitespace_token_approx_total": {
+    "count": 96504,
+    "mean": 6079.426821686147,
+    "median": 3553.0,
+    "p95": 18298.399999999965,
+    "min": 18.0,
+    "max": 162119.0
+  },
+  "reasoning_len": {
+    "count": 96504,
+    "mean": 175.2363218104949,
+    "median": 137.0,
+    "p95": 458.0,
+    "min": 0.0,
+    "max": 8336.0
+  },
+  "reweight_rate": {
+    "count": 96504,
+    "mean": 0.9999999999999822,
+    "median": 1.0128682284627606,
+    "p95": 1.8261091752998913,
+    "min": 0.030515276733431625,
+    "max": 2.025736456925521
+  },
+  "token_note": "Token lengths are whitespace approximations; install transformers and add tokenizer support before using them for model limits."
+}

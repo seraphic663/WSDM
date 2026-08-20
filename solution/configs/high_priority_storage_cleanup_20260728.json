@@ -1,0 +1,127 @@
+{
+  "scope": "closed diagnostic training JSONL files classified high priority on 2026-07-28",
+  "preserve": [
+    "ccir/data/experiments/m12_sequence_weight/train_m12.jsonl",
+    "all manifests, audits, row decisions, reports, logs, models, and checkpoint metadata"
+  ],
+  "targets": [
+    {
+      "path": "ccir/data/experiments/cleaned_ab_queryholdout_20260719/raw_train.jsonl",
+      "bytes": 3859519450,
+      "sha256": "bc7e2c0e059d275d2f2ea7ffa6ac6dd825a650e55e26837e0079c29342b1eb55",
+      "reason": "closed raw arm; reproducible from preserved source, builder, and manifest",
+      "rebuild_evidence": [
+        "solution/scripts/run_cleaned_ab_pipeline.sh",
+        "solution/src/prepare_cleaned_ab.py",
+        "ccir/data/experiments/cleaned_ab_queryholdout_20260719/manifest.json"
+      ]
+    },
+    {
+      "path": "ccir/data/experiments/cleaned_ab_queryholdout_20260719/cleaned_train.jsonl",
+      "bytes": 3849110880,
+      "sha256": "66f8f57989c5970c925b05cb67d7a7da34af0d28b33cbde7cc0dbcb0078c1e26",
+      "reason": "closed cleaned arm; reproducible from preserved source, builder, and manifest",
+      "rebuild_evidence": [
+        "solution/scripts/run_cleaned_ab_pipeline.sh",
+        "solution/src/prepare_cleaned_ab.py",
+        "ccir/data/experiments/cleaned_ab_queryholdout_20260719/manifest.json"
+      ]
+    },
+    {
+      "path": "ccir/data/experiments/m11_hard_negatives/train_m11.jsonl",
+      "bytes": 3791087108,
+      "sha256": "3254ca33a4e4701149dee2d1aad18f64646b9c6f2854d58e64fa4dcf0b2f5f0b",
+      "reason": "closed M11 diagnostic dataset; deterministic builder is preserved",
+      "rebuild_evidence": [
+        "solution/experiments/m11_hard_negatives/prepare.py",
+        "solution/experiments/run_all.sh"
+      ]
+    },
+    {
+      "path": "ccir/data/experiments/m13_reasoning_consistency/train_m13.jsonl",
+      "bytes": 3784989242,
+      "sha256": "146596cabf197f954395a54680631cbc570afcb7015c56cd119b6bcb7b87268e",
+      "reason": "closed M13 diagnostic dataset; deterministic builder is preserved",
+      "rebuild_evidence": [
+        "solution/experiments/m13_reasoning_consistency/prepare.py",
+        "solution/experiments/run_all.sh"
+      ]
+    },
+    {
+      "path": "ccir/data/experiments/m08_trajectory_weighting/train_m08.jsonl",
+      "bytes": 3784983872,
+      "sha256": "f7e6faba4c53f723f09364bfe731b8778ba37c8497ed481abcb025adfaaedd7d",
+      "reason": "closed M08 diagnostic dataset; deterministic builder and config are preserved",
+      "rebuild_evidence": [
+        "solution/experiments/m08_trajectory_weighting/prepare.py",
+        "ccir/data/experiments/m08_trajectory_weighting/m08_config.json"
+      ]
+    },
+    {
+      "path": "ccir/data/experiments/trajectory_quality_v1/arms/arm_b_hard_filter.jsonl",
+      "bytes": 3783976554,
+      "sha256": "3e45cdf19403bee3d9e0ea64c28ad30f9e05d9700020540665af52beaf5fd172",
+      "reason": "closed trajectory-quality hard-filter arm; builder, decisions, and manifest are preserved",
+      "rebuild_evidence": [
+        "solution/src/build_trajectory_quality_arms.py",
+        "ccir/data/experiments/trajectory_quality_v1/arms/manifest.json",
+        "ccir/data/experiments/trajectory_quality_v1/arms/row_decisions.jsonl"
+      ]
+    },
+    {
+      "path": "ccir/data/experiments/trajectory_quality_v1/arms/arm_c_soft_weight.jsonl",
+      "bytes": 3780070838,
+      "sha256": "6eecad9a70f6c309d7a61b2a73e3f6f491b3baefc005210374b0a9409f4f6d5e",
+      "reason": "closed trajectory-quality soft-weight arm; builder, decisions, and manifest are preserved",
+      "rebuild_evidence": [
+        "solution/src/build_trajectory_quality_arms.py",
+        "ccir/data/experiments/trajectory_quality_v1/arms/manifest.json",
+        "ccir/data/experiments/trajectory_quality_v1/arms/row_decisions.jsonl"
+      ]
+    },
+    {
+      "path": "ccir/data/experiments/trajectory_search_idx_v2/train_search_idx_soft.jsonl",
+      "bytes": 3780075353,
+      "sha256": "8fd600b9d5c46bd21f91ad073a3bddeab375ef2fa5c9998c61c75a68ccb7fced",
+      "reason": "closed trajectory-search-index v2 arm; builder, decisions, audit, and manifest are preserved",
+      "rebuild_evidence": [
+        "solution/scripts/build_trajectory_search_idx_v2.sh",
+        "solution/src/build_trajectory_search_idx_arm.py",
+        "ccir/data/experiments/trajectory_search_idx_v2/manifest.json",
+        "ccir/data/experiments/trajectory_search_idx_v2/row_decisions.jsonl"
+      ]
+    },
+    {
+      "path": "ccir/data/experiments/m09_multipositive/train_m09_expanded.jsonl",
+      "bytes": 3747419382,
+      "sha256": "95f009470b0cee34b3e4f1be193b8559b1f5eeb9b07094ed354b030a4291c9d6",
+      "reason": "superseded closed M09 expanded artifact; exact identity and surviving source/workflow evidence are preserved",
+      "rebuild_evidence": [
+        "solution/experiments/post_m12_pipeline.sh",
+        "solution/experiments/run_all.sh",
+        "ccir/data/experiments/early_stop_v1/manifest.json"
+      ]
+    },
+    {
+      "path": "ccir/data/experiments/m09_multipositive_v2/train.jsonl",
+      "bytes": 3362244594,
+      "sha256": "742988dd6bbf6046904c995786da3e5ec2b738516e1bf8c29995bcf7ab4a2b9c",
+      "reason": "closed M09 v2 diagnostic dataset; deterministic builder and independent audit are preserved",
+      "rebuild_evidence": [
+        "solution/experiments/m09_multipositive/prepare.py",
+        "ccir/data/experiments/m09_multipositive_v2/manifest.json",
+        "ccir/data/experiments/m09_multipositive_v2/independent_audit.json"
+      ]
+    },
+    {
+      "path": "ccir/data/experiments/m09_multipositive/train_m09.jsonl",
+      "bytes": 3358495672,
+      "sha256": "05ba35bbd24f16ae3bb155da1049262d3e911d633794c25264c1d7ec5bb81482",
+      "reason": "superseded closed M09 artifact; exact identity and surviving source/workflow evidence are preserved",
+      "rebuild_evidence": [
+        "solution/experiments/run_all.sh",
+        "ccir/data/experiments/early_stop_v1/manifest.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "definitions": {
+    "human_relevance": "gold/evidence qrel membership; otherwise not_in_known_qrels",
+    "later_visited": "not visited before the next search, but visited after a later search observation",
+    "strict_answer_match_proxy": "normalized gold-answer text occurs in prediction; not the official judge",
+    "utilized": "null because use in reasoning is not directly observable",
+    "visited": "visit observation after this search and before the next search observation"
+  },
+  "grain": "one document occurrence in one search observation",
+  "inputs": {
+    "evidence_qrels": "LRAT/topics-qrels/qrel_evidence.txt",
+    "gold_qrels": "LRAT/topics-qrels/qrel_golds.txt",
+    "queries": "LRAT/topics-qrels/queries.tsv",
+    "trajectory_files": [
+      {
+        "bytes": 337012498,
+        "path": "data/raw/bcp_search_agent_trajectory/ds4pro/predictions.jsonl",
+        "run_id": "ds4pro",
+        "sha256": "98ef95fc174bdcdbba3308767e4fffa197b4dc70e94234210aafd5cadf0230af"
+      },
+      {
+        "bytes": 337375861,
+        "path": "data/raw/bcp_search_agent_trajectory/glm51/predictions.jsonl",
+        "run_id": "glm51",
+        "sha256": "c54a544e37464484a7ad8b38e408987ddf6c1c885304012d6a6ab1cec3158bed"
+      },
+      {
+        "bytes": 525047779,
+        "path": "data/raw/bcp_search_agent_trajectory/gpt-oss-120b-high/predictions.jsonl",
+        "run_id": "gpt-oss-120b-high",
+        "sha256": "0e943e1b0d844986beb0beed12f809dcc9dd6ec039d9534c6804ef603bd1910d"
+      },
+      {
+        "bytes": 427721376,
+        "path": "data/raw/bcp_search_agent_trajectory/kimi26/predictions.jsonl",
+        "run_id": "kimi26",
+        "sha256": "1d1e84c50615a12004ba717285c0cdbf94e41211ad798f298f2db5e19fe7a13c"
+      },
+      {
+        "bytes": 277075664,
+        "path": "data/raw/bcp_search_agent_trajectory/qwen35-35b-a3b/predictions.jsonl",
+        "run_id": "qwen35-35b-a3b",
+        "sha256": "4c0d3925b49d34d560286e5e0e35ecf0f95feca6994b79bb243aee32dc1c3076"
+      },
+      {
+        "bytes": 314257793,
+        "path": "data/raw/bcp_search_agent_trajectory/tongyi-dr/predictions.jsonl",
+        "run_id": "tongyi-dr",
+        "sha256": "4d06ffe541344d4c2e0f36f5680a3446a031403b15591887805520130a382320"
+      }
+    ]
+  },
+  "manifest_validation": {
+    "all_checks_pass": true,
+    "checks": [
+      {
+        "bytes_match": true,
+        "present": true,
+        "rows_match": true,
+        "run_id": "ds4pro",
+        "sha256_match": true,
+        "terminations_match": true
+      },
+      {
+        "bytes_match": true,
+        "present": true,
+        "rows_match": true,
+        "run_id": "glm51",
+        "sha256_match": true,
+        "terminations_match": true
+      },
+      {
+        "bytes_match": true,
+        "present": true,
+        "rows_match": true,
+        "run_id": "gpt-oss-120b-high",
+        "sha256_match": true,
+        "terminations_match": true
+      },
+      {
+        "bytes_match": true,
+        "present": true,
+        "rows_match": true,
+        "run_id": "kimi26",
+        "sha256_match": true,
+        "terminations_match": true
+      },
+      {
+        "bytes_match": true,
+        "present": true,
+        "rows_match": true,
+        "run_id": "qwen35-35b-a3b",
+        "sha256_match": true,
+        "terminations_match": true
+      },
+      {
+        "bytes_match": true,
+        "present": true,
+        "rows_match": true,
+        "run_id": "tongyi-dr",
+        "sha256_match": true,
+        "terminations_match": true
+      }
+    ],
+    "manifest": "data/raw/bcp_search_agent_trajectory/manifest.json"
+  },
+  "output": "analysis/negative_reliability/candidates.jsonl.gz",
+  "per_agent": {
+    "ds4pro": {
+      "candidate_rows": 119240,
+      "failed_visit_observations": 1,
+      "five_hit_search_observations": 23848,
+      "matched_queries": 830,
+      "missing_queries": 0,
+      "parsed_search_observations": 23848,
+      "parsed_visit_observations": 1463,
+      "search_observations": 23848,
+      "successful_visit_observations": 1462,
+      "successful_visit_observations_mapped_to_any_surface": 1462,
+      "successful_visit_observations_unmapped_to_any_surface": 0,
+      "termination_answer": 824,
+      "termination_incomplete": 6,
+      "trajectory_rows": 830,
+      "visit_observations": 1463
+    },
+    "glm51": {
+      "candidate_rows": 82455,
+      "failed_search_observations": 1,
+      "failed_visit_observations": 1,
+      "five_hit_search_observations": 16491,
+      "invalid_search_request_observations": 1,
+      "matched_queries": 830,
+      "missing_queries": 0,
+      "parsed_search_observations": 16491,
+      "parsed_visit_observations": 1318,
+      "search_observations": 16493,
+      "successful_visit_observations": 1317,
+      "successful_visit_observations_mapped_to_any_surface": 1317,
+      "successful_visit_observations_unmapped_to_any_surface": 0,
+      "termination_answer": 749,
+      "termination_incomplete": 81,
+      "trajectory_rows": 830,
+      "visit_observations": 1318
+    },
+    "gpt-oss-120b-high": {
+      "candidate_rows": 132025,
+      "failed_search_observations": 1,
+      "failed_visit_observations": 65,
+      "five_hit_search_observations": 26335,
+      "invalid_search_request_observations": 69,
+      "matched_queries": 830,
+      "missing_queries": 0,
+      "parsed_search_observations": 26353,
+      "parsed_visit_observations": 1491,
+      "search_observations": 26423,
+      "successful_visit_observations": 1426,
+      "successful_visit_observations_mapped_to_any_surface": 1411,
+      "successful_visit_observations_unmapped_to_any_surface": 15,
+      "termination_answer": 724,
+      "termination_incomplete": 106,
+      "trajectory_rows": 830,
+      "visit_observations": 1491
+    },
+    "kimi26": {
+      "candidate_rows": 113140,
+      "failed_search_observations": 2,
+      "failed_visit_observations": 1,
+      "five_hit_search_observations": 22628,
+      "matched_queries": 830,
+      "missing_queries": 0,
+      "parsed_search_observations": 22628,
+      "parsed_visit_observations": 1009,
+      "search_observations": 22630,
+      "successful_visit_observations": 1008,
+      "successful_visit_observations_mapped_to_any_surface": 1007,
+      "successful_visit_observations_unmapped_to_any_surface": 1,
+      "termination_answer": 693,
+      "termination_incomplete": 137,
+      "trajectory_rows": 830,
+      "visit_observations": 1009
+    },
+    "qwen35-35b-a3b": {
+      "candidate_rows": 89435,
+      "failed_search_observations": 4,
+      "five_hit_search_observations": 17887,
+      "matched_queries": 830,
+      "missing_queries": 0,
+      "parsed_search_observations": 17887,
+      "parsed_visit_observations": 1363,
+      "search_observations": 17891,
+      "successful_visit_observations": 1363,
+      "successful_visit_observations_mapped_to_any_surface": 1361,
+      "successful_visit_observations_unmapped_to_any_surface": 2,
+      "termination_answer": 819,
+      "termination_incomplete": 11,
+      "trajectory_rows": 830,
+      "visit_observations": 1363
+    },
+    "tongyi-dr": {
+      "candidate_rows": 101920,
+      "failed_search_observations": 1,
+      "failed_visit_observations": 1055,
+      "five_hit_search_observations": 20384,
+      "invalid_search_request_observations": 2591,
+      "matched_queries": 830,
+      "missing_queries": 0,
+      "parsed_search_observations": 20384,
+      "parsed_visit_observations": 3152,
+      "search_observations": 22976,
+      "successful_visit_observations": 2108,
+      "successful_visit_observations_mapped_to_any_surface": 2029,
+      "successful_visit_observations_unmapped_to_any_surface": 79,
+      "termination_answer": 515,
+      "termination_incomplete": 315,
+      "trajectory_rows": 830,
+      "visit_observations": 3163
+    }
+  },
+  "query_count": 830,
+  "schema_version": "candidate_audit.v1",
+  "totals": {
+    "candidate_rows": 638215,
+    "failed_search_observations": 9,
+    "failed_visit_observations": 1123,
+    "five_hit_search_observations": 127573,
+    "invalid_search_request_observations": 2661,
+    "matched_trajectory_rows": 4980,
+    "parsed_search_observations": 127591,
+    "parsed_visit_observations": 9796,
+    "search_observations": 130261,
+    "successful_visit_observations": 8684,
+    "successful_visit_observations_mapped_to_any_surface": 8587,
+    "successful_visit_observations_unmapped_to_any_surface": 97,
+    "termination_answer": 4324,
+    "termination_incomplete": 656,
+    "trajectory_rows": 4980,
+    "unmatched_trajectory_rows": 0,
+    "visit_observations": 9807
+  },
+  "unmatched_questions": []
+}

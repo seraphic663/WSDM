@@ -1,0 +1,68 @@
+{
+  "version": "trajectory_quality_policy_v1",
+  "thresholds": {
+    "long_trajectory_min_steps": 126,
+    "low_rank_min": 8
+  },
+  "hard_delete": {
+    "stable_only": true,
+    "rules": [],
+    "manual_bad_row_indices": [
+      4349,
+      5436,
+      6043,
+      6727,
+      9685,
+      20794,
+      27105,
+      30937,
+      35231,
+      37978,
+      46241,
+      57769,
+      64919,
+      75217,
+      84868
+    ],
+    "rationale": "No tested trajectory-derived rule reached high precision. Arm B therefore deletes only rows individually confirmed as bad positives during the two manual calibration passes."
+  },
+  "soft_multipliers": {
+    "answer_unmatched": 0.9,
+    "long_trajectory": 0.95,
+    "low_rank": 0.95,
+    "explicit_negative_reasoning": 0.85,
+    "strict_negative_combo": 0.8
+  },
+  "minimum_combined_multiplier": 0.5,
+  "manual_review": {
+    "completed": true,
+    "locked_test_used": false,
+    "primary_review": {
+      "local_control_path": "archive/evidence/trajectory_quality_v1_manual_review_20260724.jsonl",
+      "server_review_path": "ccir/reports/trajectory_quality_v1_manual_review_20260724.jsonl",
+      "sha256": "27a9a3c6b7701ade8c48fee3c353366273e71e09e9c41680573c3d920b098457",
+      "rows": 62,
+      "bad_positive": 8,
+      "keep": 49,
+      "uncertain": 5
+    },
+    "strict_combo_review": {
+      "local_control_path": "archive/evidence/trajectory_quality_v1_strict_negative_combo_review_20260724.jsonl",
+      "server_review_path": "ccir/reports/trajectory_quality_v1_strict_negative_combo_review_20260724.jsonl",
+      "sha256": "b2a08b782a794197f690a2cc1289b08ed6d0b33bc02b4a112a931467464e766e",
+      "rows": 30,
+      "bad_positive": 7,
+      "keep": 17,
+      "uncertain": 6,
+      "bad_positive_precision_excluding_uncertain": 0.2916666666666667
+    },
+    "feature_precision_excluding_uncertain": {
+      "answer_unmatched": 0.2,
+      "long_trajectory": 0.25,
+      "continue_search": 0.0,
+      "low_rank": 0.125,
+      "explicit_negative_reasoning": 0.3333333333333333,
+      "empty_reasoning": 0.0
+    }
+  }
+}

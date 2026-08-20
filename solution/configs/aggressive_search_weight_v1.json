@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "method": "replace_reasoning_length_weight_with_search_stage_weight",
+  "hypothesis": "queries that discover evidence after more search reformulations should receive more training weight",
+  "search_stage_buckets": {
+    "idx0": {
+      "description": "first search in the trajectory",
+      "raw_weight": 0.75
+    },
+    "idx1_2": {
+      "description": "second or third search in the trajectory",
+      "raw_weight": 1.0
+    },
+    "idx3plus": {
+      "description": "fourth or later search in the trajectory",
+      "raw_weight": 1.5
+    }
+  },
+  "ambiguous_weight": 1.0,
+  "normalization": "scale stable rows so the total weight including ambiguous rows equals the row count",
+  "locked_test_used": false,
+  "external_data_used": false
+}

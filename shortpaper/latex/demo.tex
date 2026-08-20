@@ -1,0 +1,18 @@
+% Layout demonstration only. All findings and values are placeholders.
+% This entry inherits all format settings from template.tex.
+\def\PaperArxivMode{1}
+\def\PaperAuthorName{Ziming Zhao}
+\def\PaperAuthorEmail{seraphic221@outlook.com}
+\def\PaperAuthorInstitution{Renmin University of China}
+\def\PaperAuthorCity{Beijing}
+\def\PaperAuthorCountry{China}
+\def\PaperTitle{When Is an Unvisited Result a Negative? Auditing Behavioral Supervision for Agentic Retrieval}
+\def\PaperKeywords{agentic search, information retrieval, negative supervision, trajectory auditing}
+\def\PaperBodyFile{demo-body.tex}
+\def\PaperBibliography{demo}
+
+\long\def\PaperAbstract{Agent trajectories provide scalable retriever supervision, but a surfaced result that is not visited is not necessarily irrelevant. We reconstruct 638,215 ranked candidate occurrences from 4,980 trajectories produced by six search Agents on 830 BrowseComp-Plus questions and align them with evidence and gold qrels. Among candidates unvisited before the next search, 13.77\% are evidence-qrel positives; the query-balanced mean is 19.69\%. Reliability is strongly conditional: later-visited candidates are evidence-relevant 66.69\% of the time versus 12.14\% otherwise, and the contrast grows to 67.99 percentage points on first exposures. Repetition, rank, search stage, and accumulated evidence show additional heterogeneity under question-cluster bootstrap uncertainty. A pre-registered method gate nevertheless returns PIVOT because successful-visit mapping reaches 98.88\%, below its 99\% threshold. We therefore contribute a qrels-grounded diagnosis and a reproducible stopping decision rather than an unsupported training-gain claim.}
+
+\long\def\PaperEthics{We use publicly released Agent trajectories and benchmark qrels and do not collect private interaction logs. The trajectory release is Apache-2.0; the underlying BrowseComp-Plus questions, corpus, and qrels retain their own terms. We report aggregate behavior and question hashes rather than reproducing question text in analysis outputs. Qrels and Agent policies may encode topical or language coverage biases. Treating unlisted or unvisited documents as negatives can suppress long-tail evidence, so the paper separates benchmark membership from universal relevance and declines to train an intervention after its coverage gate fails.}
+
+\input{template.tex}

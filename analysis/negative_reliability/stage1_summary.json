@@ -1,0 +1,1509 @@
+{
+  "agent_retrieval_coverage": {
+    "ds4pro": {
+      "queries": 830,
+      "queries_with_any_evidence_qrel": 748,
+      "queries_with_any_gold_qrel": 688,
+      "unique_docs_mean": 52.119277108433735
+    },
+    "glm51": {
+      "queries": 830,
+      "queries_with_any_evidence_qrel": 766,
+      "queries_with_any_gold_qrel": 714,
+      "unique_docs_mean": 41.44819277108434
+    },
+    "gpt-oss-120b-high": {
+      "queries": 830,
+      "queries_with_any_evidence_qrel": 634,
+      "queries_with_any_gold_qrel": 495,
+      "unique_docs_mean": 45.22650602409639
+    },
+    "kimi26": {
+      "queries": 829,
+      "queries_with_any_evidence_qrel": 762,
+      "queries_with_any_gold_qrel": 705,
+      "unique_docs_mean": 60.57056694813028
+    },
+    "qwen35-35b-a3b": {
+      "queries": 830,
+      "queries_with_any_evidence_qrel": 672,
+      "queries_with_any_gold_qrel": 588,
+      "unique_docs_mean": 44.11566265060241
+    },
+    "tongyi-dr": {
+      "queries": 829,
+      "queries_with_any_evidence_qrel": 698,
+      "queries_with_any_gold_qrel": 600,
+      "unique_docs_mean": 53.64897466827503
+    }
+  },
+  "candidate_rows": 638215,
+  "conditioning_population": "candidate occurrences not visited before the next search observation",
+  "gate": {
+    "coverage_gate": false,
+    "decision": "PIVOT",
+    "rule": "GO requires complete six-agent coverage, >=99% search/visit parsing and visit mapping, plus a behavioral contrast with query-bootstrap CI excluding zero and absolute difference >=0.5 percentage points.",
+    "signal_gate": true,
+    "stable_behavioral_contrasts": {
+      "cross_agent_exposure:5-6_minus_1": {
+        "ci95": [
+          0.20884900681629479,
+          0.24689810427517214
+        ],
+        "difference": 0.2275626863074855,
+        "excludes_zero": true,
+        "left_estimate": 0.2372377628261872,
+        "right_estimate": 0.009675076518701689
+      },
+      "cross_agent_visit_agreement:mixed visit decisions_minus_never visited": {
+        "ci95": [
+          0.512233583603765,
+          0.578461383003565
+        ],
+        "difference": 0.5456147019451157,
+        "excludes_zero": true,
+        "left_estimate": 0.6019091475991749,
+        "right_estimate": 0.0562944456540592
+      },
+      "later_visited:true_minus_false": {
+        "ci95": [
+          0.5165747798417751,
+          0.5743141285165697
+        ],
+        "difference": 0.5454267384544084,
+        "excludes_zero": true,
+        "left_estimate": 0.666861019824022,
+        "right_estimate": 0.12143428136961366
+      },
+      "repeated_retrieval:true_minus_false": {
+        "ci95": [
+          0.09657996603174016,
+          0.11749613933426035
+        ],
+        "difference": 0.10681859438029816,
+        "excludes_zero": true,
+        "left_estimate": 0.17891197933949135,
+        "right_estimate": 0.0720933849591932
+      }
+    }
+  },
+  "gold_qrel_sensitivity": {
+    "pre_specified_contrasts": {
+      "cross_agent_exposure:5-6_minus_1": {
+        "ci95": [
+          0.09886882153509234,
+          0.12350424868927737
+        ],
+        "difference": 0.11084548942901165,
+        "excludes_zero": true,
+        "left_estimate": 0.1159986132942004,
+        "right_estimate": 0.005153123865188746
+      },
+      "cross_agent_visit_agreement:mixed visit decisions_minus_never visited": {
+        "ci95": [
+          0.2641033916018227,
+          0.3172020963147929
+        ],
+        "difference": 0.2904779892895263,
+        "excludes_zero": true,
+        "left_estimate": 0.3131145968244831,
+        "right_estimate": 0.022636607534956842
+      },
+      "evidence_state:partial_minus_none": {
+        "ci95": [
+          0.07472096939092815,
+          0.09158514451056633
+        ],
+        "difference": 0.08282342822159472,
+        "excludes_zero": true,
+        "left_estimate": 0.09212289844737404,
+        "right_estimate": 0.009299470225779314
+      },
+      "later_visit_first_exposure:true_minus_false": {
+        "ci95": [
+          0.3979129834378535,
+          0.44243189950579037
+        ],
+        "difference": 0.41994798745187123,
+        "excludes_zero": true,
+        "left_estimate": 0.44551344983310426,
+        "right_estimate": 0.025565462381233046
+      },
+      "later_visited:true_minus_false": {
+        "ci95": [
+          0.3169209885055715,
+          0.37260811657041054
+        ],
+        "difference": 0.3446515203192541,
+        "excludes_zero": true,
+        "left_estimate": 0.4018869924732323,
+        "right_estimate": 0.05723547215397815
+      },
+      "rank:1_minus_3-5": {
+        "ci95": [
+          0.057550668165524975,
+          0.07357232872913534
+        ],
+        "difference": 0.06523460777083687,
+        "excludes_zero": true,
+        "left_estimate": 0.11290798936773122,
+        "right_estimate": 0.04767338159689435
+      },
+      "repeated_retrieval:true_minus_false": {
+        "ci95": [
+          0.04745271907176359,
+          0.060982657689246114
+        ],
+        "difference": 0.05404330935616841,
+        "excludes_zero": true,
+        "left_estimate": 0.08836277301478286,
+        "right_estimate": 0.03431946365861445
+      },
+      "repeated_without_later_visit:true_minus_false": {
+        "ci95": [
+          0.04567680439312494,
+          0.05834061475200485
+        ],
+        "difference": 0.05187434902606533,
+        "excludes_zero": true,
+        "left_estimate": 0.07743981140729837,
+        "right_estimate": 0.025565462381233046
+      }
+    },
+    "stratified_results": {
+      "agent": {
+        "ds4pro": {
+          "candidate_occurrences": 118298,
+          "ci95": [
+            0.0541489801930382,
+            0.06722172644161882
+          ],
+          "estimate": 0.060474395171516,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.10356358935264787,
+            0.12315220626867389
+          ],
+          "query_balanced_estimate": 0.1132473773333835,
+          "relevant_candidates": 7154
+        },
+        "glm51": {
+          "candidate_occurrences": 81646,
+          "ci95": [
+            0.07032270535786822,
+            0.0866392514228344
+          ],
+          "estimate": 0.07809323175660779,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.11773716423668175,
+            0.13712994560592134
+          ],
+          "query_balanced_estimate": 0.12716835428561996,
+          "relevant_candidates": 6376
+        },
+        "gpt-oss-120b-high": {
+          "candidate_occurrences": 131245,
+          "ci95": [
+            0.05484373794059141,
+            0.07064921678536804
+          ],
+          "estimate": 0.06255476399100918,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.08164971902734848,
+            0.1016908800253097
+          ],
+          "query_balanced_estimate": 0.09156543132760074,
+          "relevant_candidates": 8210
+        },
+        "kimi26": {
+          "candidate_occurrences": 112511,
+          "ci95": [
+            0.07100053805513937,
+            0.08624382425577982
+          ],
+          "estimate": 0.07840122299152971,
+          "queries_with_candidates": 829,
+          "query_balanced_ci95": [
+            0.11666104030770418,
+            0.1373654902949431
+          ],
+          "query_balanced_estimate": 0.12702665773245125,
+          "relevant_candidates": 8821
+        },
+        "qwen35-35b-a3b": {
+          "candidate_occurrences": 88684,
+          "ci95": [
+            0.05312665421052294,
+            0.06664736800134789
+          ],
+          "estimate": 0.05959361327860719,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.09524827110264746,
+            0.11412650734468201
+          ],
+          "query_balanced_estimate": 0.10465469861250914,
+          "relevant_candidates": 5285
+        },
+        "tongyi-dr": {
+          "candidate_occurrences": 100699,
+          "ci95": [
+            0.06064249180537065,
+            0.0769225205998759
+          ],
+          "estimate": 0.0684316626778816,
+          "queries_with_candidates": 829,
+          "query_balanced_ci95": [
+            0.09525750366788654,
+            0.11656782351100914
+          ],
+          "query_balanced_estimate": 0.10558970227372338,
+          "relevant_candidates": 6891
+        }
+      },
+      "cross_agent_exposure": {
+        "1": {
+          "candidate_occurrences": 115658,
+          "ci95": [
+            0.0037274222269270516,
+            0.00671298287329425
+          ],
+          "estimate": 0.005153123865188746,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.002913179455193133,
+            0.006141849345662397
+          ],
+          "query_balanced_estimate": 0.004333074319152199,
+          "relevant_candidates": 596
+        },
+        "2": {
+          "candidate_occurrences": 76097,
+          "ci95": [
+            0.011002934056924745,
+            0.018800188541752028
+          ],
+          "estimate": 0.014704916093932744,
+          "queries_with_candidates": 829,
+          "query_balanced_ci95": [
+            0.007796357751255069,
+            0.012602297638458389
+          ],
+          "query_balanced_estimate": 0.010124482067732341,
+          "relevant_candidates": 1119
+        },
+        "3-4": {
+          "candidate_occurrences": 144221,
+          "ci95": [
+            0.03872263908619419,
+            0.05275527478270272
+          ],
+          "estimate": 0.04547187996200276,
+          "queries_with_candidates": 827,
+          "query_balanced_ci95": [
+            0.03691152734977049,
+            0.05019300942038643
+          ],
+          "query_balanced_estimate": 0.043391387980642036,
+          "relevant_candidates": 6558
+        },
+        "5-6": {
+          "candidate_occurrences": 297107,
+          "ci95": [
+            0.10411711270441373,
+            0.12841747961634317
+          ],
+          "estimate": 0.1159986132942004,
+          "queries_with_candidates": 829,
+          "query_balanced_ci95": [
+            0.15568704895806088,
+            0.18493437235667515
+          ],
+          "query_balanced_estimate": 0.17003708406050827,
+          "relevant_candidates": 34464
+        }
+      },
+      "cross_agent_visit_agreement": {
+        "all surfaced agents visited": {
+          "candidate_occurrences": 7741,
+          "ci95": [
+            0.487619511035328,
+            0.6376257458015002
+          ],
+          "estimate": 0.5631055419196487,
+          "queries_with_candidates": 376,
+          "query_balanced_ci95": [
+            0.4406694754148021,
+            0.5400424826082926
+          ],
+          "query_balanced_estimate": 0.49020041118518953,
+          "relevant_candidates": 4359
+        },
+        "mixed visit decisions": {
+          "candidate_occurrences": 83388,
+          "ci95": [
+            0.2864467160706191,
+            0.34127969274517866
+          ],
+          "estimate": 0.3131145968244831,
+          "queries_with_candidates": 805,
+          "query_balanced_ci95": [
+            0.328937149222022,
+            0.37813041440874445
+          ],
+          "query_balanced_estimate": 0.3532427878334919,
+          "relevant_candidates": 26110
+        },
+        "never visited": {
+          "candidate_occurrences": 541954,
+          "ci95": [
+            0.01976905630403673,
+            0.02562704362319223
+          ],
+          "estimate": 0.022636607534956842,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.03011406884396262,
+            0.040299218405804846
+          ],
+          "query_balanced_estimate": 0.03507903559387133,
+          "relevant_candidates": 12268
+        }
+      },
+      "evidence_state": {
+        "complete": {
+          "candidate_occurrences": 55084,
+          "ci95": [
+            0.1822491445753912,
+            0.23173594219464574
+          ],
+          "estimate": 0.20597632706412025,
+          "queries_with_candidates": 451,
+          "query_balanced_ci95": [
+            0.22509874402898292,
+            0.2673578555862932
+          ],
+          "query_balanced_estimate": 0.24646759746126565,
+          "relevant_candidates": 11346
+        },
+        "none": {
+          "candidate_occurrences": 263886,
+          "ci95": [
+            0.008232194483984838,
+            0.01048581068803374
+          ],
+          "estimate": 0.009299470225779314,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.03670884508379349,
+            0.04741721340349567
+          ],
+          "query_balanced_estimate": 0.04189652418560469,
+          "relevant_candidates": 2454
+        },
+        "partial": {
+          "candidate_occurrences": 314113,
+          "ci95": [
+            0.08385239458255528,
+            0.10124270527441435
+          ],
+          "estimate": 0.09212289844737404,
+          "queries_with_candidates": 805,
+          "query_balanced_ci95": [
+            0.1395618236204935,
+            0.16297470449723025
+          ],
+          "query_balanced_estimate": 0.15124028656847083,
+          "relevant_candidates": 28937
+        }
+      },
+      "later_visit_first_exposure": {
+        "false": {
+          "candidate_occurrences": 239229,
+          "ci95": [
+            0.02326132263432095,
+            0.027919600650615495
+          ],
+          "estimate": 0.025565462381233046,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.03716630415457079,
+            0.04585417836157417
+          ],
+          "query_balanced_estimate": 0.04145185103591758,
+          "relevant_candidates": 6116
+        },
+        "true": {
+          "candidate_occurrences": 5093,
+          "ci95": [
+            0.4225347385424939,
+            0.4689776993844825
+          ],
+          "estimate": 0.44551344983310426,
+          "queries_with_candidates": 820,
+          "query_balanced_ci95": [
+            0.43109613384450507,
+            0.47698434102421333
+          ],
+          "query_balanced_estimate": 0.4537692104245189,
+          "relevant_candidates": 2269
+        }
+      },
+      "later_visited": {
+        "false": {
+          "candidate_occurrences": 614217,
+          "ci95": [
+            0.05206229051375885,
+            0.06256953407003207
+          ],
+          "estimate": 0.05723547215397815,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.07943483143201313,
+            0.09512511302714663
+          ],
+          "query_balanced_estimate": 0.08705444428115315,
+          "relevant_candidates": 35155
+        },
+        "true": {
+          "candidate_occurrences": 18866,
+          "ci95": [
+            0.371949025939158,
+            0.4321658457585536
+          ],
+          "estimate": 0.4018869924732323,
+          "queries_with_candidates": 820,
+          "query_balanced_ci95": [
+            0.41474267269896226,
+            0.464376641208996
+          ],
+          "query_balanced_estimate": 0.439339687736543,
+          "relevant_candidates": 7582
+        }
+      },
+      "overall": {
+        "all": {
+          "candidate_occurrences": 633083,
+          "ci95": [
+            0.061655364418498074,
+            0.07373384102635436
+          ],
+          "estimate": 0.06750615638075892,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.0925745989930669,
+            0.1095280109517939
+          ],
+          "query_balanced_estimate": 0.10083304930891106,
+          "relevant_candidates": 42737
+        }
+      },
+      "query_difficulty": {
+        "easy (5-6 agents)": {
+          "candidate_occurrences": 306783,
+          "ci95": [
+            0.11186862690046352,
+            0.13082486085163966
+          ],
+          "estimate": 0.12090304873477344,
+          "queries_with_candidates": 537,
+          "query_balanced_ci95": [
+            0.1337242096745885,
+            0.155931169162907
+          ],
+          "query_balanced_estimate": 0.14452972506117143,
+          "relevant_candidates": 37091
+        },
+        "hard (0-1 agents)": {
+          "candidate_occurrences": 117161,
+          "ci95": [
+            0.0015091775707354266,
+            0.0033114025551584567
+          ],
+          "estimate": 0.0023557327096900846,
+          "queries_with_candidates": 91,
+          "query_balanced_ci95": [
+            0.0015958880899329996,
+            0.0035605878199194267
+          ],
+          "query_balanced_estimate": 0.002508807035596541,
+          "relevant_candidates": 276
+        },
+        "medium (2-4 agents)": {
+          "candidate_occurrences": 209139,
+          "ci95": [
+            0.022096038758840628,
+            0.02964448819695329
+          ],
+          "estimate": 0.025676703053949767,
+          "queries_with_candidates": 202,
+          "query_balanced_ci95": [
+            0.02441332022759429,
+            0.033947254568775675
+          ],
+          "query_balanced_estimate": 0.028963698654989302,
+          "relevant_candidates": 5370
+        }
+      },
+      "rank": {
+        "1": {
+          "candidate_occurrences": 125279,
+          "ci95": [
+            0.10256381366996485,
+            0.12351231624687588
+          ],
+          "estimate": 0.11290798936773122,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.15390230688189865,
+            0.18080658847003536
+          ],
+          "query_balanced_estimate": 0.16753008356842186,
+          "relevant_candidates": 14145
+        },
+        "2": {
+          "candidate_occurrences": 126564,
+          "ci95": [
+            0.07482629014257289,
+            0.09045228469945125
+          ],
+          "estimate": 0.08230618501311589,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.11410418002514014,
+            0.13616640885786255
+          ],
+          "query_balanced_estimate": 0.1247290700406368,
+          "relevant_candidates": 10417
+        },
+        "3-5": {
+          "candidate_occurrences": 381240,
+          "ci95": [
+            0.042901050800015356,
+            0.052658159414843114
+          ],
+          "estimate": 0.04767338159689435,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.06473999943014178,
+            0.07951262047413801
+          ],
+          "query_balanced_estimate": 0.07202441357582343,
+          "relevant_candidates": 18175
+        }
+      },
+      "repeated_retrieval": {
+        "false": {
+          "candidate_occurrences": 244322,
+          "ci95": [
+            0.0316168876793995,
+            0.037136696204499275
+          ],
+          "estimate": 0.03431946365861445,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.0499999189336503,
+            0.05962257526908516
+          ],
+          "query_balanced_estimate": 0.05468949850674592,
+          "relevant_candidates": 8385
+        },
+        "true": {
+          "candidate_occurrences": 388761,
+          "ci95": [
+            0.08005248247863672,
+            0.09693650880798632
+          ],
+          "estimate": 0.08836277301478286,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.12686369384094656,
+            0.15109398531882615
+          ],
+          "query_balanced_estimate": 0.13896279205671005,
+          "relevant_candidates": 34352
+        }
+      },
+      "repeated_without_later_visit": {
+        "false": {
+          "candidate_occurrences": 239229,
+          "ci95": [
+            0.02331093542055846,
+            0.0279030248704761
+          ],
+          "estimate": 0.025565462381233046,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.037257832354642785,
+            0.045700853804871065
+          ],
+          "query_balanced_estimate": 0.04145185103591758,
+          "relevant_candidates": 6116
+        },
+        "true": {
+          "candidate_occurrences": 374988,
+          "ci95": [
+            0.06999665517579233,
+            0.08539652798249689
+          ],
+          "estimate": 0.07743981140729837,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.11432802723578889,
+            0.13793605297298683
+          ],
+          "query_balanced_estimate": 0.12586691360215377,
+          "relevant_candidates": 29039
+        }
+      },
+      "robustness": {
+        "first exposure only": {
+          "candidate_occurrences": 244322,
+          "ci95": [
+            0.03170071699925981,
+            0.03713595994831725
+          ],
+          "estimate": 0.03431946365861445,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.05003068912078893,
+            0.05965879725000355
+          ],
+          "query_balanced_estimate": 0.05468949850674592,
+          "relevant_candidates": 8385
+        }
+      },
+      "search_phase": {
+        "early": {
+          "candidate_occurrences": 196484,
+          "ci95": [
+            0.03377974002832207,
+            0.04263749074615362
+          ],
+          "estimate": 0.03804889965595163,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.0533845271192636,
+            0.06606932465248065
+          ],
+          "query_balanced_estimate": 0.05961006410126342,
+          "relevant_candidates": 7476
+        },
+        "late": {
+          "candidate_occurrences": 222298,
+          "ci95": [
+            0.08937655182394302,
+            0.10550250901609325
+          ],
+          "estimate": 0.09731981394344529,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.1268500258350619,
+            0.14868279761446465
+          ],
+          "query_balanced_estimate": 0.13758993031569863,
+          "relevant_candidates": 21634
+        },
+        "middle": {
+          "candidate_occurrences": 214301,
+          "ci95": [
+            0.0573312753839284,
+            0.07017873768927416
+          ],
+          "estimate": 0.06358813071334245,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.08729941881493278,
+            0.10542350781167946
+          ],
+          "query_balanced_estimate": 0.09615952395835284,
+          "relevant_candidates": 13627
+        }
+      },
+      "strict_answer_match_proxy": {
+        "false": {
+          "candidate_occurrences": 386854,
+          "ci95": [
+            0.022540527918310273,
+            0.03024941362926615
+          ],
+          "estimate": 0.02625538316781008,
+          "queries_with_candidates": 617,
+          "query_balanced_ci95": [
+            0.03729063317772577,
+            0.050395184110684076
+          ],
+          "query_balanced_estimate": 0.043655738253389316,
+          "relevant_candidates": 10157
+        },
+        "true": {
+          "candidate_occurrences": 246229,
+          "ci95": [
+            0.12198382771794164,
+            0.14294463209563785
+          ],
+          "estimate": 0.13231585231633966,
+          "queries_with_candidates": 699,
+          "query_balanced_ci95": [
+            0.12801953471469119,
+            0.1485313429932032
+          ],
+          "query_balanced_estimate": 0.13798969639630093,
+          "relevant_candidates": 32580
+        }
+      },
+      "termination": {
+        "answer": {
+          "candidate_occurrences": 491514,
+          "ci95": [
+            0.07368939713704381,
+            0.08742328430214899
+          ],
+          "estimate": 0.08031714254324393,
+          "queries_with_candidates": 830,
+          "query_balanced_ci95": [
+            0.09759096855050328,
+            0.11466598602943161
+          ],
+          "query_balanced_estimate": 0.10602631700278861,
+          "relevant_candidates": 39477
+        },
+        "incomplete": {
+          "candidate_occurrences": 141569,
+          "ci95": [
+            0.01851727016238499,
+            0.028055337623712866
+          ],
+          "estimate": 0.02302764023197169,
+          "queries_with_candidates": 395,
+          "query_balanced_ci95": [
+            0.023535660565526032,
+            0.036173039182576965
+          ],
+          "query_balanced_estimate": 0.029491992295247186,
+          "relevant_candidates": 3260
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Unlisted documents are benchmark negatives under the qrel evaluation protocol, but not proven universally irrelevant.",
+    "A visit is behavioral evidence, not a relevance judgment.",
+    "The strict answer-match field is a text proxy, not the official GPT-4o judge label.",
+    "Utilization in reasoning is not directly observed and remains null in the candidate table."
+  ],
+  "outcome": "evidence_qrel_positive",
+  "pre_specified_contrasts": {
+    "cross_agent_exposure:5-6_minus_1": {
+      "ci95": [
+        0.20884900681629479,
+        0.24689810427517214
+      ],
+      "difference": 0.2275626863074855,
+      "excludes_zero": true,
+      "left_estimate": 0.2372377628261872,
+      "right_estimate": 0.009675076518701689
+    },
+    "cross_agent_visit_agreement:mixed visit decisions_minus_never visited": {
+      "ci95": [
+        0.512233583603765,
+        0.578461383003565
+      ],
+      "difference": 0.5456147019451157,
+      "excludes_zero": true,
+      "left_estimate": 0.6019091475991749,
+      "right_estimate": 0.0562944456540592
+    },
+    "evidence_state:partial_minus_none": {
+      "ci95": [
+        0.1652219328375668,
+        0.18992464915241608
+      ],
+      "difference": 0.17735545550605114,
+      "excludes_zero": true,
+      "left_estimate": 0.19761041408665034,
+      "right_estimate": 0.020254958580599197
+    },
+    "later_visit_first_exposure:true_minus_false": {
+      "ci95": [
+        0.6586728011387265,
+        0.7010881443636068
+      ],
+      "difference": 0.679956116009394,
+      "excludes_zero": true,
+      "left_estimate": 0.7378755154133124,
+      "right_estimate": 0.05791939940391842
+    },
+    "later_visited:true_minus_false": {
+      "ci95": [
+        0.5165747798417751,
+        0.5743141285165697
+      ],
+      "difference": 0.5454267384544084,
+      "excludes_zero": true,
+      "left_estimate": 0.666861019824022,
+      "right_estimate": 0.12143428136961366
+    },
+    "rank:1_minus_3-5": {
+      "ci95": [
+        0.12987012279275112,
+        0.15429190009588495
+      ],
+      "difference": 0.1415229636995918,
+      "excludes_zero": true,
+      "left_estimate": 0.23768548599525857,
+      "right_estimate": 0.09616252229566677
+    },
+    "repeated_retrieval:true_minus_false": {
+      "ci95": [
+        0.09657996603174016,
+        0.11749613933426035
+      ],
+      "difference": 0.10681859438029816,
+      "excludes_zero": true,
+      "left_estimate": 0.17891197933949135,
+      "right_estimate": 0.0720933849591932
+    },
+    "repeated_without_later_visit:true_minus_false": {
+      "ci95": [
+        0.09408297151765904,
+        0.11452591260654785
+      ],
+      "difference": 0.10403511647392301,
+      "excludes_zero": true,
+      "left_estimate": 0.16195451587784143,
+      "right_estimate": 0.05791939940391842
+    }
+  },
+  "quality": {
+    "candidate_rows": 638215,
+    "unvisited_before_next_search": 633083,
+    "visited_before_next_search": 5132
+  },
+  "schema_version": "negative_reliability_audit.v1",
+  "stratified_results": {
+    "agent": {
+      "ds4pro": {
+        "candidate_occurrences": 118298,
+        "ci95": [
+          0.11451733464718869,
+          0.1366217268467536
+        ],
+        "estimate": 0.1252514835415645,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.2095915637368992,
+          0.236945501328344
+        ],
+        "query_balanced_estimate": 0.2230237056532751,
+        "relevant_candidates": 14817
+      },
+      "glm51": {
+        "candidate_occurrences": 81646,
+        "ci95": [
+          0.14911292229249912,
+          0.17584684834925535
+        ],
+        "estimate": 0.1621267422776376,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.23365786081429582,
+          0.260345999105445
+        ],
+        "query_balanced_estimate": 0.2469402992968192,
+        "relevant_candidates": 13237
+      },
+      "gpt-oss-120b-high": {
+        "candidate_occurrences": 131245,
+        "ci95": [
+          0.11756311267139172,
+          0.14299403304096892
+        ],
+        "estimate": 0.13000876223856148,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.17052021991069383,
+          0.19955002954935305
+        ],
+        "query_balanced_estimate": 0.18483467075934512,
+        "relevant_candidates": 17063
+      },
+      "kimi26": {
+        "candidate_occurrences": 112511,
+        "ci95": [
+          0.14638327355783415,
+          0.17033991101854135
+        ],
+        "estimate": 0.15796677658184533,
+        "queries_with_candidates": 829,
+        "query_balanced_ci95": [
+          0.22547491700623948,
+          0.25271814332881287
+        ],
+        "query_balanced_estimate": 0.2390278272645336,
+        "relevant_candidates": 17773
+      },
+      "qwen35-35b-a3b": {
+        "candidate_occurrences": 88684,
+        "ci95": [
+          0.10915815730212436,
+          0.1312406384276217
+        ],
+        "estimate": 0.11971719814171666,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.19002883100104684,
+          0.21718385778022542
+        ],
+        "query_balanced_estimate": 0.20345488224510605,
+        "relevant_candidates": 10617
+      },
+      "tongyi-dr": {
+        "candidate_occurrences": 100699,
+        "ci95": [
+          0.12360746076279835,
+          0.14810157073887478
+        ],
+        "estimate": 0.13566172454542746,
+        "queries_with_candidates": 829,
+        "query_balanced_ci95": [
+          0.1849434886243429,
+          0.21291554223806908
+        ],
+        "query_balanced_estimate": 0.19893075103665292,
+        "relevant_candidates": 13661
+      }
+    },
+    "cross_agent_exposure": {
+      "1": {
+        "candidate_occurrences": 115658,
+        "ci95": [
+          0.007594907610285913,
+          0.01198614743786608
+        ],
+        "estimate": 0.009675076518701689,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.00720463113557675,
+          0.011757269128912432
+        ],
+        "query_balanced_estimate": 0.009252768429885014,
+        "relevant_candidates": 1119
+      },
+      "2": {
+        "candidate_occurrences": 76097,
+        "ci95": [
+          0.023787991796881847,
+          0.03540778593818984
+        ],
+        "estimate": 0.02929156208523332,
+        "queries_with_candidates": 829,
+        "query_balanced_ci95": [
+          0.02246826170338555,
+          0.0320048857857013
+        ],
+        "query_balanced_estimate": 0.027019359046415493,
+        "relevant_candidates": 2229
+      },
+      "3-4": {
+        "candidate_occurrences": 144221,
+        "ci95": [
+          0.08214129085145797,
+          0.10372832657936415
+        ],
+        "estimate": 0.09246226277726545,
+        "queries_with_candidates": 827,
+        "query_balanced_ci95": [
+          0.0816776554858145,
+          0.10013462945567916
+        ],
+        "query_balanced_estimate": 0.0905816462807015,
+        "relevant_candidates": 13335
+      },
+      "5-6": {
+        "candidate_occurrences": 297107,
+        "ci95": [
+          0.21892783626431395,
+          0.2567550839288048
+        ],
+        "estimate": 0.2372377628261872,
+        "queries_with_candidates": 829,
+        "query_balanced_ci95": [
+          0.30722416761551175,
+          0.3476379625883817
+        ],
+        "query_balanced_estimate": 0.32705613478036794,
+        "relevant_candidates": 70485
+      }
+    },
+    "cross_agent_visit_agreement": {
+      "all surfaced agents visited": {
+        "candidate_occurrences": 7741,
+        "ci95": [
+          0.784143232615609,
+          0.878270053984716
+        ],
+        "estimate": 0.8354217801317659,
+        "queries_with_candidates": 376,
+        "query_balanced_ci95": [
+          0.6372563287249609,
+          0.7274673680637544
+        ],
+        "query_balanced_estimate": 0.6828979037103048,
+        "relevant_candidates": 6467
+      },
+      "mixed visit decisions": {
+        "candidate_occurrences": 83388,
+        "ci95": [
+          0.5675825054185368,
+          0.6359864075464515
+        ],
+        "estimate": 0.6019091475991749,
+        "queries_with_candidates": 805,
+        "query_balanced_ci95": [
+          0.6297284361692155,
+          0.6824440811971068
+        ],
+        "query_balanced_estimate": 0.6567338700842534,
+        "relevant_candidates": 50192
+      },
+      "never visited": {
+        "candidate_occurrences": 541954,
+        "ci95": [
+          0.051214079127270884,
+          0.06171902418999017
+        ],
+        "estimate": 0.0562944456540592,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.07923766550717132,
+          0.09561086792265633
+        ],
+        "query_balanced_estimate": 0.08731719375549156,
+        "relevant_candidates": 30509
+      }
+    },
+    "evidence_state": {
+      "complete": {
+        "candidate_occurrences": 55084,
+        "ci95": [
+          0.3302862795564093,
+          0.3881116990736145
+        ],
+        "estimate": 0.35856146975528286,
+        "queries_with_candidates": 451,
+        "query_balanced_ci95": [
+          0.3972477833395382,
+          0.4412923572736842
+        ],
+        "query_balanced_estimate": 0.41920296433586246,
+        "relevant_candidates": 19751
+      },
+      "none": {
+        "candidate_occurrences": 263886,
+        "ci95": [
+          0.018227923746355134,
+          0.022585058672707593
+        ],
+        "estimate": 0.020254958580599197,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.09372487158922213,
+          0.11140354000406068
+        ],
+        "query_balanced_estimate": 0.1023833203998033,
+        "relevant_candidates": 5345
+      },
+      "partial": {
+        "candidate_occurrences": 314113,
+        "ci95": [
+          0.18507793692240374,
+          0.21040613622045962
+        ],
+        "estimate": 0.19761041408665034,
+        "queries_with_candidates": 805,
+        "query_balanced_ci95": [
+          0.26746067376604205,
+          0.2970481519491645
+        ],
+        "query_balanced_estimate": 0.2824312626140816,
+        "relevant_candidates": 62072
+      }
+    },
+    "later_visit_first_exposure": {
+      "false": {
+        "candidate_occurrences": 239229,
+        "ci95": [
+          0.054119682026395215,
+          0.061990113851394246
+        ],
+        "estimate": 0.05791939940391842,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.08566025352316585,
+          0.09919237165877065
+        ],
+        "query_balanced_estimate": 0.09223771412736372,
+        "relevant_candidates": 13856
+      },
+      "true": {
+        "candidate_occurrences": 5093,
+        "ci95": [
+          0.7151463239751744,
+          0.7605101606884493
+        ],
+        "estimate": 0.7378755154133124,
+        "queries_with_candidates": 820,
+        "query_balanced_ci95": [
+          0.6984535938549604,
+          0.7445899817881975
+        ],
+        "query_balanced_estimate": 0.7219084955177135,
+        "relevant_candidates": 3758
+      }
+    },
+    "later_visited": {
+      "false": {
+        "candidate_occurrences": 614217,
+        "ci95": [
+          0.11272627352624338,
+          0.13037925602344735
+        ],
+        "estimate": 0.12143428136961366,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.1659876080429546,
+          0.1884931599090405
+        ],
+        "query_balanced_estimate": 0.17724507420195262,
+        "relevant_candidates": 74587
+      },
+      "true": {
+        "candidate_occurrences": 18866,
+        "ci95": [
+          0.6343759007290583,
+          0.6985289344016342
+        ],
+        "estimate": 0.666861019824022,
+        "queries_with_candidates": 820,
+        "query_balanced_ci95": [
+          0.6636757077022505,
+          0.713404463048323
+        ],
+        "query_balanced_estimate": 0.6887582452956263,
+        "relevant_candidates": 12581
+      }
+    },
+    "overall": {
+      "all": {
+        "candidate_occurrences": 633083,
+        "ci95": [
+          0.12826565273174445,
+          0.1474503881820647
+        ],
+        "estimate": 0.13768810724660116,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.1850416593777665,
+          0.20916313321127875
+        ],
+        "query_balanced_estimate": 0.196893912373866,
+        "relevant_candidates": 87168
+      }
+    },
+    "query_difficulty": {
+      "easy (5-6 agents)": {
+        "candidate_occurrences": 306783,
+        "ci95": [
+          0.20832516709526994,
+          0.235600099219096
+        ],
+        "estimate": 0.22173979653370623,
+        "queries_with_candidates": 537,
+        "query_balanced_ci95": [
+          0.2529069039294088,
+          0.281395031327561
+        ],
+        "query_balanced_estimate": 0.26718024192745893,
+        "relevant_candidates": 68026
+      },
+      "hard (0-1 agents)": {
+        "candidate_occurrences": 117161,
+        "ci95": [
+          0.019543349411845816,
+          0.04151933332985696
+        ],
+        "estimate": 0.029583223086180555,
+        "queries_with_candidates": 91,
+        "query_balanced_ci95": [
+          0.02196595775711743,
+          0.05319823796568203
+        ],
+        "query_balanced_estimate": 0.035694638666016965,
+        "relevant_candidates": 3466
+      },
+      "medium (2-4 agents)": {
+        "candidate_occurrences": 209139,
+        "ci95": [
+          0.06545273616138189,
+          0.08489552053965212
+        ],
+        "estimate": 0.0749549342781595,
+        "queries_with_candidates": 202,
+        "query_balanced_ci95": [
+          0.07093933787977887,
+          0.09515752275879333
+        ],
+        "query_balanced_estimate": 0.08266309523096921,
+        "relevant_candidates": 15676
+      }
+    },
+    "rank": {
+      "1": {
+        "candidate_occurrences": 125279,
+        "ci95": [
+          0.221980133855451,
+          0.2544862335778987
+        ],
+        "estimate": 0.23768548599525857,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.3137602889867936,
+          0.35028268160381737
+        ],
+        "query_balanced_estimate": 0.3317901932477572,
+        "relevant_candidates": 29777
+      },
+      "2": {
+        "candidate_occurrences": 126564,
+        "ci95": [
+          0.15189999325568246,
+          0.17606990223258392
+        ],
+        "estimate": 0.16379065137005783,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.22210446265592243,
+          0.25265788690809665
+        ],
+        "query_balanced_estimate": 0.23734201744496772,
+        "relevant_candidates": 20730
+      },
+      "3-5": {
+        "candidate_occurrences": 381240,
+        "ci95": [
+          0.08895776996062302,
+          0.10400358151708325
+        ],
+        "estimate": 0.09616252229566677,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.1305123706301201,
+          0.15131317767747246
+        ],
+        "query_balanced_estimate": 0.14076298572662765,
+        "relevant_candidates": 36661
+      }
+    },
+    "repeated_retrieval": {
+      "false": {
+        "candidate_occurrences": 244322,
+        "ci95": [
+          0.06763439893361727,
+          0.07684017729998897
+        ],
+        "estimate": 0.0720933849591932,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.10474881400027557,
+          0.11952350254882746
+        ],
+        "query_balanced_estimate": 0.1120012707629357,
+        "relevant_candidates": 17614
+      },
+      "true": {
+        "candidate_occurrences": 388761,
+        "ci95": [
+          0.1659348542339249,
+          0.192469169827541
+        ],
+        "estimate": 0.17891197933949135,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.2487965045216569,
+          0.2822029681213703
+        ],
+        "query_balanced_estimate": 0.26545957408523185,
+        "relevant_candidates": 69554
+      }
+    },
+    "repeated_without_later_visit": {
+      "false": {
+        "candidate_occurrences": 239229,
+        "ci95": [
+          0.054107902945458676,
+          0.06205112617626391
+        ],
+        "estimate": 0.05791939940391842,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.08549219313772631,
+          0.09918564324313325
+        ],
+        "query_balanced_estimate": 0.09223771412736372,
+        "relevant_candidates": 13856
+      },
+      "true": {
+        "candidate_occurrences": 374988,
+        "ci95": [
+          0.14976765165685604,
+          0.1746752370066193
+        ],
+        "estimate": 0.16195451587784143,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.2311004301659919,
+          0.26432895037866394
+        ],
+        "query_balanced_estimate": 0.24755111575698957,
+        "relevant_candidates": 60731
+      }
+    },
+    "robustness": {
+      "first exposure only": {
+        "candidate_occurrences": 244322,
+        "ci95": [
+          0.06766927766043196,
+          0.07693406009479653
+        ],
+        "estimate": 0.0720933849591932,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.10468693145584726,
+          0.11946328142683629
+        ],
+        "query_balanced_estimate": 0.1120012707629357,
+        "relevant_candidates": 17614
+      }
+    },
+    "search_phase": {
+      "early": {
+        "candidate_occurrences": 196484,
+        "ci95": [
+          0.08426015170918043,
+          0.10073110317873823
+        ],
+        "estimate": 0.09235357586368356,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.12195803995398471,
+          0.1421502325680619
+        ],
+        "query_balanced_estimate": 0.13203675437699255,
+        "relevant_candidates": 18146
+      },
+      "late": {
+        "candidate_occurrences": 222298,
+        "ci95": [
+          0.17174376915871975,
+          0.19549247986300505
+        ],
+        "estimate": 0.18314154873188243,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.23939523973728158,
+          0.2681649055320383
+        ],
+        "query_balanced_estimate": 0.25339773311106933,
+        "relevant_candidates": 40712
+      },
+      "middle": {
+        "candidate_occurrences": 214301,
+        "ci95": [
+          0.12217963810628012,
+          0.14257705024710127
+        ],
+        "estimate": 0.1321039099210923,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.1779539539018868,
+          0.2034847651186831
+        ],
+        "query_balanced_estimate": 0.1906497894607217,
+        "relevant_candidates": 28310
+      }
+    },
+    "strict_answer_match_proxy": {
+      "false": {
+        "candidate_occurrences": 386854,
+        "ci95": [
+          0.06652761610531005,
+          0.08563940019130421
+        ],
+        "estimate": 0.07572624297538606,
+        "queries_with_candidates": 617,
+        "query_balanced_ci95": [
+          0.09423744529336896,
+          0.11764600710189023
+        ],
+        "query_balanced_estimate": 0.1057182958027522,
+        "relevant_candidates": 29295
+      },
+      "true": {
+        "candidate_occurrences": 246229,
+        "ci95": [
+          0.22259255279227314,
+          0.24784554382099572
+        ],
+        "estimate": 0.2350373026735275,
+        "queries_with_candidates": 699,
+        "query_balanced_ci95": [
+          0.2368791661582911,
+          0.26126682371253146
+        ],
+        "query_balanced_estimate": 0.2491897999662735,
+        "relevant_candidates": 57873
+      }
+    },
+    "termination": {
+      "answer": {
+        "candidate_occurrences": 491514,
+        "ci95": [
+          0.14779697772941022,
+          0.1680213988719053
+        ],
+        "estimate": 0.15783477174607438,
+        "queries_with_candidates": 830,
+        "query_balanced_ci95": [
+          0.193360682853998,
+          0.21718815900573166
+        ],
+        "query_balanced_estimate": 0.20535167818004524,
+        "relevant_candidates": 77578
+      },
+      "incomplete": {
+        "candidate_occurrences": 141569,
+        "ci95": [
+          0.056548668742584234,
+          0.08023006583815015
+        ],
+        "estimate": 0.06774081896460384,
+        "queries_with_candidates": 395,
+        "query_balanced_ci95": [
+          0.06403803370335986,
+          0.08741056075194505
+        ],
+        "query_balanced_estimate": 0.07533016988576138,
+        "relevant_candidates": 9590
+      }
+    }
+  },
+  "uncertainty": {
+    "cluster": "query_id",
+    "method": "nonparametric cluster bootstrap",
+    "samples": 10000,
+    "seed": 20260820
+  }
+}

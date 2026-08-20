@@ -1,0 +1,70 @@
+{
+  "schema_version": "lrat_reliability_arms.v1",
+  "contract": {
+    "random": "drop the same number per row as later_visit with deterministic random selection",
+    "exposure": "prioritize negatives surfaced at least twice before the mapped positive browse event, then deterministically fill if needed to match later_visit removals per row",
+    "later_visit": "drop negatives visited after the mapped positive browse event",
+    "minimum_negatives": 5,
+    "only_changed_fields": [
+      "neg",
+      "neg_id"
+    ],
+    "unstable_provenance_rows": "unchanged",
+    "locked_test_used": false
+  },
+  "seed": 20260820,
+  "inputs": {
+    "pairs": {
+      "path": "/tmp/wsdm-early-stop-v1-20260820/train.jsonl",
+      "bytes": 3784989300,
+      "sha256": "158eb3843e8e022b5b0d7e64446ddf0782e2ad1aaa830f9f5aa3fb3b06c835c9"
+    },
+    "provenance": {
+      "path": "/tmp/wsdm-train-provenance-20260820/provenance.jsonl",
+      "bytes": 356187972,
+      "sha256": "59d53d0f4ee2aa78fe1b0616eac26fd387cfa40eed915466b50e30dbdaca8547"
+    },
+    "trajectory_archive": {
+      "path": "/home/seraphic/WSDM/data/raw/LRAT-Train/trajectories.tar.gz",
+      "bytes": 404317768,
+      "sha256": "fb8ca29a7807e334fa0eab2d22fd3c3d52852c2f42f534969c4b1605578617a9"
+    },
+    "split_manifest": null
+  },
+  "global": {
+    "rows": 94113,
+    "stable_rows": 93977,
+    "later_risk_occurrences": 44100,
+    "exposure_risk_occurrences": 656830,
+    "capped_rows": 15061
+  },
+  "outputs": {
+    "random": {
+      "path": "random.jsonl",
+      "bytes": 3694449302,
+      "sha256": "4744b22967c6db10e896579b6a49b4e90d24bc5c44fc892e266d90a2d6543a1a",
+      "rows": 94113,
+      "changed_rows": 28880,
+      "negatives_removed": 43575,
+      "rows_below_minimum": 0
+    },
+    "exposure": {
+      "path": "exposure.jsonl",
+      "bytes": 3692755136,
+      "sha256": "4045c87307baf2c4068b6521f9c7fe7819b3984771e4fb50569589f4849380a1",
+      "rows": 94113,
+      "changed_rows": 28880,
+      "negatives_removed": 43575,
+      "rows_below_minimum": 0
+    },
+    "later_visit": {
+      "path": "later_visit.jsonl",
+      "bytes": 3694510995,
+      "sha256": "f85e0fb1efbbbe2e3b490c773c3fcb8c12dbf8bdbbe3aec5b4856a9bb899cfde",
+      "rows": 94113,
+      "changed_rows": 28880,
+      "negatives_removed": 43575,
+      "rows_below_minimum": 0
+    }
+  }
+}

@@ -1,0 +1,93 @@
+% Shared ACM sigconf wrapper for the author-visible arXiv draft and the
+% anonymous WSDM 2027 Short review build.
+% Verified against the official CFP on 2026-08-20.
+% Format changes made here propagate to demo.tex and future review entry files.
+% Keep the review class unchanged unless the CFP changes.
+\ifdefined\PaperArxivMode
+  \documentclass[sigconf,nonacm]{acmart}
+\else
+  \documentclass[sigconf,anonymous,review]{acmart}
+\fi
+
+\usepackage{booktabs}
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{Bib\TeX}}}
+
+% Review metadata. Rights, DOI, and ISBN are assigned only for camera-ready papers.
+\setcopyright{none}
+\copyrightyear{2027}
+\acmYear{2027}
+\acmConference[WSDM '27]{Proceedings of the 20th ACM International Conference on Web Search and Data Mining}{February 15--19, 2027}{Hong Kong, China}
+\acmBooktitle{Proceedings of the 20th ACM International Conference on Web Search and Data Mining (WSDM '27), February 15--19, 2027, Hong Kong, China}
+\acmDOI{}
+\acmISBN{}
+\ifdefined\PaperArxivMode
+  \settopmatter{printacmref=false, printccs=false, printfolios=true}
+\else
+  \settopmatter{printacmref=true, printccs=true, printfolios=true}
+\fi
+\renewcommand\footnotetextcopyrightpermission[1]{}
+
+% Entry files may define these values before \input{template.tex}.
+\providecommand{\PaperTitle}{Replace with an Anonymous Paper Title}
+\providecommand{\PaperAbstract}{Replace this paragraph with a self-contained abstract that states the problem, approach, evidence, and supported conclusion without revealing author identity.}
+\providecommand{\PaperKeywords}{agentic search, information retrieval, behavioral supervision}
+\providecommand{\PaperBodyFile}{template-body.tex}
+\providecommand{\PaperEthics}{Discuss relevant privacy, fairness, misuse, environmental, labor, or other societal implications.}
+
+\title{\PaperTitle}
+
+\ifdefined\PaperArxivMode
+  \providecommand{\PaperAuthorName}{Author Name}
+  \providecommand{\PaperAuthorEmail}{author@example.com}
+  \providecommand{\PaperAuthorInstitution}{Institution}
+  \providecommand{\PaperAuthorCity}{City}
+  \providecommand{\PaperAuthorCountry}{Country}
+  \author{\PaperAuthorName}
+  \email{\PaperAuthorEmail}
+  \affiliation{%
+    \institution{\PaperAuthorInstitution}
+    \city{\PaperAuthorCity}
+    \country{\PaperAuthorCountry}}
+\else
+  % The review PDF remains anonymous under the required class option.
+  % Enter the complete author list only in the submission-system metadata.
+  \author{Anonymous Author(s)}
+  \affiliation{%
+    \institution{Anonymous Institution}
+    \country{Anonymous}}
+\fi
+
+\begin{document}
+
+\begin{abstract}
+\PaperAbstract
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+  <concept>
+    <concept_id>10002951.10003317</concept_id>
+    <concept_desc>Information systems~Information retrieval</concept_desc>
+    <concept_significance>500</concept_significance>
+  </concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Information systems~Information retrieval}
+
+\keywords{\PaperKeywords}
+
+\maketitle
+
+\input{\PaperBodyFile}
+
+\section*{Ethical Considerations}
+\PaperEthics
+
+\ifdefined\PaperBibliography
+  \bibliographystyle{ACM-Reference-Format}
+  \bibliography{\PaperBibliography}
+\fi
+
+\end{document}

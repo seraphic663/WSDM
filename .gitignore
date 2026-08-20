@@ -1,0 +1,60 @@
+# WSDM root repository boundary
+# The two nested repositories remain local independent working copies.
+/LRAT/
+/search_agent/
+
+# Data payloads are local-only; retain only the documented metadata files.
+/data/**
+!/data/
+!/data/README.md
+!/data/raw/
+!/data/raw/bcp_search_agent_trajectory/
+!/data/raw/bcp_search_agent_trajectory/README.md
+!/data/raw/LRAT-Train/
+!/data/raw/LRAT-Train/README.md
+
+# Version weights, tokenizer assets, registry and per-version manifests are local-only.
+/versions/*
+!/versions/
+!/versions/README.md
+
+# Local environments and generated artifacts.
+/.download-env/
+**/.venv/
+**/venv/
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.cache/
+**/build/
+**/dist/
+**/*.aux
+**/*.bbl
+**/*.blg
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.nav
+**/*.out
+**/*.snm
+**/*.synctex.gz
+**/*.toc
+**/output/.build/
+
+# Local credentials and temporary working material kept outside the root repo.
+/shortpaper/server.md
+/shortpaper/temp.md
+/shortpaper/temp.png
+**/.env
+**/.env.*
+
+# Other local XIR/CCIR material outside the WSDM Short root-repo scope.
+/CCIR-report/
+/LRAT-paper/
+/archive/
+/组会/
+/GRID32_RUNNER_*.py
+/GRID32_WATCHDOG_*.py
+/verify_project_markdown_links.py

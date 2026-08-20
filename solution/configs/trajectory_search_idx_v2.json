@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "experiment": "trajectory_search_idx_soft_v2",
+  "feature": "event.search_idx",
+  "feature_indexing": "zero_based",
+  "stable_multipliers": {
+    "0": 1.0,
+    "1": 1.1,
+    "2": 1.1,
+    "3_plus": 1.2
+  },
+  "neutral_buckets": [
+    "ambiguous",
+    "mismatch"
+  ],
+  "normalization": "preserve total source weight while leaving neutral buckets unchanged",
+  "locked_test_used": false
+}

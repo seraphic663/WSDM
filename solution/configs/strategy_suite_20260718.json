@@ -1,0 +1,28 @@
+{
+  "suite_id": "strategy_suite_20260718",
+  "simulation_only": true,
+  "max_steps": 10,
+  "seed": 20260716,
+  "base_model": "M00",
+  "training": [
+    {"name": "b_original_g6_lr1e6", "data": "B/original_changed64.jsonl", "group_size": 6, "learning_rate": "1e-6"},
+    {"name": "b_cleaned_g6_lr1e6", "data": "B/cleaned_changed64.jsonl", "group_size": 6, "learning_rate": "1e-6"},
+    {"name": "shared_weighted_g6_lr1e6", "data": "shared/fixed_group9_64.jsonl", "group_size": 6, "learning_rate": "1e-6"},
+    {"name": "c_unit_g6_lr1e6", "data": "C/unit_weight64.jsonl", "group_size": 6, "learning_rate": "1e-6"},
+    {"name": "e_group10_lr1e6", "data": "shared/fixed_group9_64.jsonl", "group_size": 10, "learning_rate": "1e-6"},
+    {"name": "f_group6_lr5e7", "data": "shared/fixed_group9_64.jsonl", "group_size": 6, "learning_rate": "5e-7"},
+    {"name": "f_group6_lr3e7", "data": "shared/fixed_group9_64.jsonl", "group_size": 6, "learning_rate": "3e-7"}
+  ],
+  "evaluations": [
+    {"name": "a_m00_query_isolated_diag32", "model": "M00", "data": "A/query_isolated_diag32.jsonl"},
+    {"name": "d_m00_shielded_existing_neg16", "model": "M00", "data": "D/shielded_existing_neg16.jsonl"},
+    {"name": "g_tail_avg2_diag32", "model": "G/tail_avg_2", "data": "A/query_isolated_diag32.jsonl"},
+    {"name": "g_tail_avg3_diag32", "model": "G/tail_avg_3", "data": "A/query_isolated_diag32.jsonl"}
+  ],
+  "constraints": {
+    "no_full_epoch": true,
+    "no_external_data": true,
+    "no_hf_or_competition_submission": true,
+    "dev500_is_training_overlap_diagnostic": true
+  }
+}

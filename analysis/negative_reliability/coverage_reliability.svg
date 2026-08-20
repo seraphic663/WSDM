@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#222}.title{font-size:20px;font-weight:700}.label{font-size:13px}.tick{font-size:11px;fill:#555}</style>
+<text class="title" x="60" y="34">Stage 0: parsed search coverage</text>
+<text class="title" x="590" y="34">Stage 1: evidence-qrel rate among unvisited</text>
+<text class="label" x="60" y="66">question mapping</text>
+<rect x="60" y="75" width="470" height="42" fill="#e8edf2" rx="3"/>
+<rect x="60" y="75" width="470.0" height="42" fill="#2878b5" rx="3"/>
+<text class="label" x="68" y="102" fill="white">100.00%</text>
+<text class="label" x="60" y="134">search observations</text>
+<rect x="60" y="143" width="470" height="42" fill="#e8edf2" rx="3"/>
+<rect x="60" y="143" width="470.0" height="42" fill="#2878b5" rx="3"/>
+<text class="label" x="68" y="170" fill="white">100.00%</text>
+<text class="label" x="60" y="202">visit arguments</text>
+<rect x="60" y="211" width="470" height="42" fill="#e8edf2" rx="3"/>
+<rect x="60" y="211" width="469.5" height="42" fill="#2878b5" rx="3"/>
+<text class="label" x="68" y="238" fill="white">99.89%</text>
+<text class="label" x="60" y="270">visits mapped</text>
+<rect x="60" y="279" width="470" height="42" fill="#e8edf2" rx="3"/>
+<rect x="60" y="279" width="464.8" height="42" fill="#2878b5" rx="3"/>
+<text class="label" x="68" y="306" fill="white">98.88%</text>
+<line x1="590" y1="460.0" x2="1060" y2="460.0" stroke="#ddd"/>
+<text class="tick" x="582" y="464.0" text-anchor="end">0.0%</text>
+<line x1="590" y1="382.0" x2="1060" y2="382.0" stroke="#ddd"/>
+<text class="tick" x="582" y="386.0" text-anchor="end">16.1%</text>
+<line x1="590" y1="304.0" x2="1060" y2="304.0" stroke="#ddd"/>
+<text class="tick" x="582" y="308.0" text-anchor="end">32.1%</text>
+<line x1="590" y1="226.0" x2="1060" y2="226.0" stroke="#ddd"/>
+<text class="tick" x="582" y="230.0" text-anchor="end">48.2%</text>
+<line x1="590" y1="148.0" x2="1060" y2="148.0" stroke="#ddd"/>
+<text class="tick" x="582" y="152.0" text-anchor="end">64.3%</text>
+<line x1="590" y1="70.0" x2="1060" y2="70.0" stroke="#ddd"/>
+<text class="tick" x="582" y="74.0" text-anchor="end">80.3%</text>
+<line x1="637.0" y1="397.7" x2="637.0" y2="388.4" stroke="#c43c39" stroke-width="3"/>
+<line x1="631.0" y1="397.7" x2="643.0" y2="397.7" stroke="#c43c39" stroke-width="2"/>
+<line x1="631.0" y1="388.4" x2="643.0" y2="388.4" stroke="#c43c39" stroke-width="2"/>
+<circle cx="637.0" cy="393.2" r="6" fill="#c43c39"/>
+<text class="label" x="637.0" y="484" text-anchor="middle">Overall</text>
+<text class="tick" x="637.0" y="502" text-anchor="middle">13.77%</text>
+<line x1="731.0" y1="405.3" x2="731.0" y2="396.7" stroke="#c43c39" stroke-width="3"/>
+<line x1="725.0" y1="405.3" x2="737.0" y2="405.3" stroke="#c43c39" stroke-width="2"/>
+<line x1="725.0" y1="396.7" x2="737.0" y2="396.7" stroke="#c43c39" stroke-width="2"/>
+<circle cx="731.0" cy="401.0" r="6" fill="#c43c39"/>
+<text class="label" x="731.0" y="484" text-anchor="middle">Never/later no</text>
+<text class="tick" x="731.0" y="502" text-anchor="middle">12.14%</text>
+<line x1="825.0" y1="152.0" x2="825.0" y2="120.9" stroke="#c43c39" stroke-width="3"/>
+<line x1="819.0" y1="152.0" x2="831.0" y2="152.0" stroke="#c43c39" stroke-width="2"/>
+<line x1="819.0" y1="120.9" x2="831.0" y2="120.9" stroke="#c43c39" stroke-width="2"/>
+<circle cx="825.0" cy="136.2" r="6" fill="#c43c39"/>
+<text class="label" x="825.0" y="484" text-anchor="middle">Later visited</text>
+<text class="tick" x="825.0" y="502" text-anchor="middle">66.69%</text>
+<line x1="919.0" y1="379.4" x2="919.0" y2="366.6" stroke="#c43c39" stroke-width="3"/>
+<line x1="913.0" y1="379.4" x2="925.0" y2="379.4" stroke="#c43c39" stroke-width="2"/>
+<line x1="913.0" y1="366.6" x2="925.0" y2="366.6" stroke="#c43c39" stroke-width="2"/>
+<circle cx="919.0" cy="373.1" r="6" fill="#c43c39"/>
+<text class="label" x="919.0" y="484" text-anchor="middle">Repeated</text>
+<text class="tick" x="919.0" y="502" text-anchor="middle">17.89%</text>
+<line x1="1013.0" y1="352.2" x2="1013.0" y2="336.4" stroke="#c43c39" stroke-width="3"/>
+<line x1="1007.0" y1="352.2" x2="1019.0" y2="352.2" stroke="#c43c39" stroke-width="2"/>
+<line x1="1007.0" y1="336.4" x2="1019.0" y2="336.4" stroke="#c43c39" stroke-width="2"/>
+<circle cx="1013.0" cy="344.6" r="6" fill="#c43c39"/>
+<text class="label" x="1013.0" y="484" text-anchor="middle">Rank 1</text>
+<text class="tick" x="1013.0" y="502" text-anchor="middle">23.77%</text>
+</svg>
